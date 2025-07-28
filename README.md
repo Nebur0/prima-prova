@@ -8,3 +8,6 @@ questa è una prova con git
 ## nuova sezione
 
 sto lavorando da un branch separato
+
+
+Modifica fatta da branch C (conflitto in arrivo)
