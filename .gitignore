@@ -1,0 +1,14 @@
+# Cartelle da ignorare
+node_modules/
+dist/
+.vscode/
+
+# File temporanei
+*.log
+*.tmp
+*.zip
+
+# File personali
+.env
+.DS_Store
+Thumbs.db
