@@ -14,3 +14,4 @@ HEAD
 
 Modifica fatta da branch A e C
 
+test reset
