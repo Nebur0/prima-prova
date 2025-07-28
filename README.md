@@ -1,17 +1,24 @@
-# prima prova 
-# progetto git
+# prima prova
 
-questa è una prova con git
+## 📘 Progetto Git
 
+Questa è una prova con Git.  
+Il progetto dimostra l'uso di branch, merge, risoluzione dei conflitti, release e gestione dei file base come `.gitignore`, `LICENSE`, `README.md` e `CONTRIBUTING.md`.
 
+---
 
-## nuova sezione
+## 🛠️ Funzionalità
 
-sto lavorando da un branch separato
+- Gestione dei branch (`test-a`, `test-c`, `modifica-readme`, ecc.)
+- Risoluzione dei conflitti di merge
+- Creazione di pull request
+- Aggiunta file `.gitignore`, `LICENSE` e `CONTRIBUTING.md`
+- Pubblicazione prima release v1.1.0
 
+---
 
-HEAD
+## 🚀 Istruzioni per l'uso
 
-Modifica fatta da branch A e C
-
-test reset
+```bash
+git clone https://github.com/Nebur0/prima-prova.git
+cd prima-prova
