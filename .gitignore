@@ -1,14 +1,86 @@
-# Cartelle da ignorare
+# ─────────────────────────────────────────────────────────────
+# GITIGNORE BASE PER PROGETTI DEVOPS MULTI-TECNOLOGIA
+# ─────────────────────────────────────────────────────────────
+
+# 🗂️ Cartelle di build/output/comuni
 node_modules/
 dist/
-.vscode/
+build/
+output/
+bin/
+tmp/
+temp/
+.cache/
 
-# File temporanei
+# 🔐 Configurazioni sensibili
+*.env
+.env.*
+*.pem
+*.key
+*.crt
+*.cert
+*.tfstate
+*.tfstate.*
+*.tfvars
+secrets.*
+
+# 🐳 Docker
+docker-compose.override.yml
+.docker/
+*.tar
+*.img
+
+# ☸️ Kubernetes
+*.yaml~      # file temporanei di editing
+*.yml~
+k8s/secret.yaml
+kubernetes/secret.yaml
+
+# ☁️ Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+crash.log
+override.tf
+override.tf.json
+*.tfvars
+
+# ⚙️ Ansible
+*.retry
+inventory.ini
+host_vars/
+group_vars/
+ansible.cfg
+
+# 🧪 Jenkins / CI/CD
 *.log
-*.tmp
-*.zip
+*.jenkins
+jenkins_home/
+*.war
+*.bak
 
-# File personali
-.env
+# 🛠️ IDE/editor generici
+.vscode/
+.idea/
+*.code-workspace
+
+# 🖥️ File di sistema / OS
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# 🔧 Backup/temporanei generici
+*.tmp
+*.log
+*.bak
+*.old
+*.swp
+*.swo
+*.~*
+
+# 📦 Archivi compressi
+*.zip
+*.tar.gz
+*.rar
+*.7z
