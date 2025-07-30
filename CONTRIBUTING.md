@@ -35,3 +35,18 @@ Tenere traccia di tutto quello che impari, testare le tecnologie DevOps e avere 
 
 👨‍💻 Ruben Poggiani  
 ✉️ ruben.poggiano01@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
