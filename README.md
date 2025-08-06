@@ -21,4 +21,3 @@ Il progetto dimostra l'uso di branch, merge, risoluzione dei conflitti, release 
 
 ```bash
 git clone https://github.com/Nebur0/prima-prova.git
-cd prima-prova
