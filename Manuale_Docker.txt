@@ -1,0 +1,83 @@
+📦 COMANDI DOCKER – SCALLETTA COMPLETA
+
+1. ✅ docker version
+   ➤ Mostra la versione client e server di Docker installata.
+
+2. ✅ docker info
+   ➤ Mostra informazioni dettagliate sul sistema Docker (container, immagini, versione, storage, ecc).
+
+3. ✅ docker images
+   ➤ Elenca tutte le immagini disponibili localmente.
+
+4. ✅ docker pull <image>
+   ➤ Scarica un'immagine da Docker Hub (es: docker pull nginx).
+
+5. ✅ docker rmi <image>
+   ➤ Rimuove una o più immagini (es: docker rmi nginx).
+
+6. ✅ docker run [OPTIONS] <image>
+   ➤ Crea e avvia un container da un'immagine.
+   ➤ Esempio base: docker run ubuntu
+   ➤ Esempio con opzioni:
+     -it  → Interattivo con terminale
+     --rm → Elimina il container dopo l'uso
+     -p HOST:CONTAINER  → Mappa porte
+     -v HOST:CONTAINER  → Monta volumi
+     --name  → Assegna nome al container
+
+6.1 Esempio completo:
+   docker run -it --rm --name test-container ubuntu
+
+7. ✅ docker ps
+   ➤ Elenca tutti i container attivi.
+
+8. ✅ docker ps -a
+   ➤ Elenca tutti i container, anche quelli terminati.
+
+9. ✅ docker stop <nome/container-id>
+   ➤ Ferma un container in esecuzione.
+
+10. ✅ docker start <nome/container-id>
+   ➤ Avvia un container fermo.
+
+11. ✅ docker restart <nome/container-id>
+   ➤ Riavvia un container.
+
+12. ✅ docker rm <nome/container-id>
+   ➤ Rimuove un container fermo.
+
+13. ✅ docker exec -it <nome/container-id> <comando>
+   ➤ Esegue un comando all'interno di un container già avviato (es: bash).
+
+14. ✅ docker build -t <nome-immagine> .
+   ➤ Costruisce un'immagine da un Dockerfile nella directory corrente.
+
+15. ✅ docker logs <nome/container-id>
+   ➤ Mostra i log del container.
+
+16. ✅ docker volume ls
+   ➤ Elenca i volumi Docker creati.
+
+17. ✅ docker volume rm <volume>
+   ➤ Rimuove un volume.
+
+18. ✅ docker network ls
+   ➤ Elenca le reti create da Docker.
+
+19. ✅ docker-compose up
+   ➤ Avvia i servizi definiti in un file `docker-compose.yml`.
+
+20. ✅ docker-compose up -d
+   ➤ Avvia i servizi in modalità detached (in background).
+
+21. ✅ docker-compose down
+   ➤ Ferma e rimuove tutti i servizi, network e volumi temporanei.
+
+22. ✅ docker-compose ps
+   ➤ Mostra lo stato dei container gestiti da Docker Compose.
+
+23. ✅ docker inspect <container/volume/image>
+  ➤ Mostra info dettagliate in JSON.
+
+24. ✅ docker system prune
+  ➤ Elimina TUTTO ciò che non è in uso (attenzione!).
