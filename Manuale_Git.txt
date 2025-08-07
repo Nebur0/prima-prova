@@ -61,3 +61,5 @@ Annulla l’ultimo commit e tutte le modifiche ai file. ⚠️ Pericoloso: modif
 Mostra la cronologia dei movimenti di HEAD. Utile per recuperare commit persi dopo reset.
 •	git reset --hard HEAD@{n}
 Ripristina uno stato precedente salvato nel reflog.
+•   git log <--oneline>
+Per vedere i log in modo visbilmente più chiaro
