@@ -1,83 +1,106 @@
-📦 COMANDI DOCKER – SCALLETTA COMPLETA
+🐳 1. Comandi Base Docker
+✅ docker --version
+Cosa fa: mostra la versione installata di Docker.
 
-1. ✅ docker version
-   ➤ Mostra la versione client e server di Docker installata.
+Quando usarlo: per verificare che Docker sia correttamente installato e funzionante.
 
-2. ✅ docker info
-   ➤ Mostra informazioni dettagliate sul sistema Docker (container, immagini, versione, storage, ecc).
+✅ docker pull <image>
+Cosa fa: scarica un’immagine dal Docker Hub (o da un altro registry).
 
-3. ✅ docker images
-   ➤ Elenca tutte le immagini disponibili localmente.
+Esempio: docker pull nginx
 
-4. ✅ docker pull <image>
-   ➤ Scarica un'immagine da Docker Hub (es: docker pull nginx).
+Quando usarlo: prima di eseguire un container basato su un'immagine che non hai ancora.
 
-5. ✅ docker rmi <image>
-   ➤ Rimuove una o più immagini (es: docker rmi nginx).
+✅ docker images
+Cosa fa: elenca tutte le immagini disponibili localmente.
 
-6. ✅ docker run [OPTIONS] <image>
-   ➤ Crea e avvia un container da un'immagine.
-   ➤ Esempio base: docker run ubuntu
-   ➤ Esempio con opzioni:
-     -it  → Interattivo con terminale
-     --rm → Elimina il container dopo l'uso
-     -p HOST:CONTAINER  → Mappa porte
-     -v HOST:CONTAINER  → Monta volumi
-     --name  → Assegna nome al container
+Quando usarlo: per controllare quali immagini hai già scaricato.
 
-6.1 Esempio completo:
-   docker run -it --rm --name test-container ubuntu
+✅ docker ps / docker ps -a
+docker ps: mostra solo i container attivi.
 
-7. ✅ docker ps
-   ➤ Elenca tutti i container attivi.
+docker ps -a: mostra tutti i container, inclusi quelli terminati.
 
-8. ✅ docker ps -a
-   ➤ Elenca tutti i container, anche quelli terminati.
+Quando usarlo: per avere il controllo sui container attivi/inattivi.
 
-9. ✅ docker stop <nome/container-id>
-   ➤ Ferma un container in esecuzione.
+✅ docker run
+Cosa fa: avvia un nuovo container.
 
-10. ✅ docker start <nome/container-id>
-   ➤ Avvia un container fermo.
+Opzioni comuni:
 
-11. ✅ docker restart <nome/container-id>
-   ➤ Riavvia un container.
+-d: detached (in background)
 
-12. ✅ docker rm <nome/container-id>
-   ➤ Rimuove un container fermo.
+-p 8080:80: mappa la porta 80 del container alla 8080 del tuo host
 
-13. ✅ docker exec -it <nome/container-id> <comando>
-   ➤ Esegue un comando all'interno di un container già avviato (es: bash).
+--name: assegna un nome al container
 
-14. ✅ docker build -t <nome-immagine> .
-   ➤ Costruisce un'immagine da un Dockerfile nella directory corrente.
+Esempio: docker run -d -p 8080:80 --name web nginx
 
-15. ✅ docker logs <nome/container-id>
-   ➤ Mostra i log del container.
+✅ Volumi:
+-v volume-name:/path/container: volume gestito da Docker
 
-16. ✅ docker volume ls
-   ➤ Elenca i volumi Docker creati.
+-v /host/path:/path/container: mount di una cartella dal tuo sistema
 
-17. ✅ docker volume rm <volume>
-   ➤ Rimuove un volume.
+Quando usarlo: per persistenza dei dati o per modificare file senza rebuild.
 
-18. ✅ docker network ls
-   ➤ Elenca le reti create da Docker.
+✅ docker exec -it <container> bash
+Cosa fa: accede all’interno di un container in modalità interattiva.
 
-19. ✅ docker-compose up
-   ➤ Avvia i servizi definiti in un file `docker-compose.yml`.
+Quando usarlo: per eseguire comandi o fare debug dall’interno del container.
 
-20. ✅ docker-compose up -d
-   ➤ Avvia i servizi in modalità detached (in background).
+✅ docker stop <container> / docker start <container> / docker rm <container>
+Cosa fanno:
 
-21. ✅ docker-compose down
-   ➤ Ferma e rimuove tutti i servizi, network e volumi temporanei.
+stop: ferma un container in esecuzione
 
-22. ✅ docker-compose ps
-   ➤ Mostra lo stato dei container gestiti da Docker Compose.
+start: riavvia un container fermato
 
-23. ✅ docker inspect <container/volume/image>
-  ➤ Mostra info dettagliate in JSON.
+rm: elimina un container
 
-24. ✅ docker system prune
-  ➤ Elimina TUTTO ciò che non è in uso (attenzione!).
+Quando usarli: per la gestione manuale dei container in fase di sviluppo/test.
+
+✅ docker rmi <image>
+Cosa fa: elimina un’immagine Docker.
+
+Quando usarlo: per pulire lo spazio su disco o rimuovere immagini non più usate.
+
+🧱 2. Dockerfile
+Un Dockerfile è un file di testo che definisce come costruire un’immagine Docker personalizzata.
+
+Esempio base:
+Dockerfile
+
+FROM ubuntu
+RUN apt update && apt install -y git curl
+WORKDIR /workspace
+CMD ["/bin/bash"]
+
+Spiegazione:
+FROM: base image
+
+RUN: comandi da eseguire durante il build
+
+WORKDIR: cartella di lavoro dentro al container
+
+CMD: comando di default che parte all’avvio del container
+
+✅ docker build -t nome-immagine .
+Cosa fa: crea un’immagine a partire da un Dockerfile nella cartella corrente.
+
+Quando usarlo: quando vuoi personalizzare il comportamento di un container o aggiungere tool (come Git, Vim, Curl, ecc.).
+
+📁 3. Volumi e Bind Mount
+Volumi Docker:
+
+docker run -v volume-html:/usr/share/nginx/html nginx
+Gestiti da Docker, salvati in /var/lib/docker/volumes
+
+Persistono anche dopo l’eliminazione del container
+
+Bind Mount:
+
+docker run -v /home/user/html:/usr/share/nginx/html nginx
+Collega una cartella locale alla directory del container.
+
+Ideale per lo sviluppo live (modifichi i file localmente e li vedi nel container subito).
+
