@@ -1,63 +1,91 @@
 Git – Manuale Operativo di Ruben Poggiani
+
 📁 Git Base
-•	git init
-Inizializza un nuovo repository Git locale. Usalo quando inizi un nuovo progetto.
-•	git clone <url>
-Clona un repository remoto sul tuo computer. Usalo per ottenere una copia di lavoro di un progetto esistente.
-•	git status
-Mostra lo stato dei file: modificati, in stage, non tracciati. Usalo per verificare cosa cambierà nel prossimo commit.
-•	git add <file>
-Aggiunge file all'area di staging. Usalo per preparare i file prima del commit.
-•	git commit -m "messaggio"
-Salva uno snapshot del progetto. Ogni commit rappresenta uno stato preciso dei file.
-•	git push
-Invia i commit al repository remoto (GitHub, GitLab, ecc).
-•	git pull
-Scarica le modifiche dal repository remoto e aggiorna il tuo ramo locale.
+• git init
+  Inizializza un nuovo repository Git locale. Usalo quando inizi un nuovo progetto.
+
+• git clone <url>
+  Clona un repository remoto sul tuo computer. Usalo per ottenere una copia di lavoro di un progetto esistente.
+
+• git status
+  Mostra lo stato dei file: modificati, in stage, non tracciati. Usalo per verificare cosa cambierà nel prossimo commit.
+
+• git add <file>
+  Aggiunge file all'area di staging. Usalo per preparare i file prima del commit.
+
+• git commit -m "messaggio"
+  Salva uno snapshot del progetto. Ogni commit rappresenta uno stato preciso dei file.
+
+• git push
+  Invia i commit al repository remoto (GitHub, GitLab, ecc).
+
+• git pull
+  Scarica le modifiche dal repository remoto e aggiorna il tuo ramo locale.
+
 🌿 Branching e Workflow
-•	git branch
-Elenca tutti i branch locali.
-•	git branch <nome>
-Crea un nuovo branch.
-•	git checkout <branch>
-Sposta la HEAD su un altro branch. Usalo per lavorare su una nuova feature o correzione.
-•	git checkout -b <nome>
-Crea e passa a un nuovo branch in un solo comando.
-•	git merge <branch>
-Unisce il branch specificato nel branch attuale. Usalo per integrare il lavoro di un altro branch.
-•	Conflitti di merge
-Si risolvono modificando i file in conflitto, poi con git add + git commit.
+• git branch
+  Elenca tutti i branch locali.
+
+• git branch <nome>
+  Crea un nuovo branch.
+
+• git checkout <branch>
+  Sposta la HEAD su un altro branch. Usalo per lavorare su una nuova feature o correzione.
+
+• git checkout -b <nome>
+  Crea e passa a un nuovo branch in un solo comando.
+
+• git merge <branch>
+  Unisce il branch specificato nel branch attuale. Usalo per integrare il lavoro di un altro branch.
+
+• Conflitti di merge
+  Si risolvono modificando i file in conflitto, poi con git add + git commit.
+
 📦 Versioning
-•	git tag <nome>
-Crea un'etichetta sul commit corrente. Usalo per marcare versioni importanti.
-•	git push origin <tag>
-Pusha i tag sul repository remoto.
+• git tag <nome>
+  Crea un'etichetta sul commit corrente. Usalo per marcare versioni importanti.
+
+• git push origin <tag>
+  Pusha i tag sul repository remoto.
+
 💾 Git Stash
-•	git stash
-Salva temporaneamente le modifiche non committate. Utile se devi cambiare branch senza perdere modifiche.
-•	git stash list
-Mostra tutti gli stash salvati.
-•	git stash pop
-Recupera e rimuove l’ultimo stash.
-•	git stash apply
-Applica uno stash senza rimuoverlo.
-•	git stash drop <id>
-Rimuove uno stash specifico.
-•	git stash clear
-Rimuove tutti gli stash salvati.
+• git stash
+  Salva temporaneamente le modifiche non committate. Utile se devi cambiare branch senza perdere modifiche.
+
+• git stash list
+  Mostra tutti gli stash salvati.
+
+• git stash pop
+  Recupera e rimuove l’ultimo stash.
+
+• git stash apply
+  Applica uno stash senza rimuoverlo.
+
+• git stash drop <id>
+  Rimuove uno stash specifico.
+
+• git stash clear
+  Rimuove tutti gli stash salvati.
+
 🔁 Git Rebase
-•	git rebase <branch>
-Riscrive la cronologia per inserire i commit del tuo branch sopra quelli di un altro branch. Utile per mantenere una cronologia pulita.
-•	Attenzione
-Non usare rebase su branch già pubblicati se ci lavorano anche altri.
+• git rebase <branch> |  git rebase -i HEAD~1
+  Riscrive la cronologia per inserire i commit del tuo branch sopra quelli di un altro branch. Utile per mantenere una cronologia pulita.
+
+• Attenzione
+  Non usare rebase su branch già pubblicati se ci lavorano anche altri.
+
 🧨 Git Reset
-•	git reset --soft HEAD~1
-Annulla l’ultimo commit ma mantiene i file in stage.
-•	git reset --mixed HEAD~1
-Annulla l’ultimo commit, rimuove i file dallo staging ma lascia le modifiche nei file.
-•	git reset --hard HEAD~1
-Annulla l’ultimo commit e tutte le modifiche ai file. ⚠️ Pericoloso: modifica i file sul disco.
-•	git reflog
-Mostra la cronologia dei movimenti di HEAD. Utile per recuperare commit persi dopo reset.
-•	git reset --hard HEAD@{n}
-Ripristina uno stato precedente salvato nel reflog.
+• git reset --soft HEAD~1
+  Annulla l’ultimo commit ma mantiene i file in stage.
+
+• git reset --mixed HEAD~1
+  Annulla l’ultimo commit, rimuove i file dallo staging ma lascia le modifiche nei file.
+
+• git reset --hard HEAD~1
+  Annulla l’ultimo commit e tutte le modifiche ai file. ⚠️ Pericoloso: modifica i file sul disco.
+
+• git reflog
+  Mostra la cronologia dei movimenti di HEAD. Utile per recuperare commit persi dopo reset.
+
+• git reset --hard HEAD@{n}
+  Ripristina uno stato precedente salvato nel reflog.
