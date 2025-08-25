@@ -22,6 +22,9 @@ Git – Manuale Operativo di Ruben Poggiani
 • git pull
   Scarica le modifiche dal repository remoto e aggiorna il tuo ramo locale.
 
+• git log --oneline
+Cronologia compatta.
+
 🌿 Branching e Workflow
 • git branch
   Elenca tutti i branch locali.
