@@ -34,7 +34,7 @@ Opzioni comuni:
 
 --name: assegna un nome al container
 
-Esempio: docker run -d -p 8080:80 --name web nginx
+Esempio: docker run -d -p 8080:80 --name <name> nginx
 
 ✅ Volumi:
 -v volume-name:/path/container: volume gestito da Docker
