@@ -4,6 +4,9 @@ Git – Manuale Operativo di Ruben Poggiani
 • git init
   Inizializza un nuovo repository Git locale. Usalo quando inizi un nuovo progetto.
 
+• git config
+  Configuri il tuo profilo git
+
 • git clone <url>
   Clona un repository remoto sul tuo computer. Usalo per ottenere una copia di lavoro di un progetto esistente.
 
