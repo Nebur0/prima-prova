@@ -37,6 +37,8 @@ Cronologia compatta.
 
 • git checkout -b <nome>
   Crea e passa a un nuovo branch in un solo comando.
+  
+  Crea e passa a un nuovo branch in un solo comando.
 
 • git merge <branch>
   Unisce il branch specificato nel branch attuale. Usalo per integrare il lavoro di un altro branch.
