@@ -40,6 +40,9 @@ Cronologia compatta.
   
   Crea e passa a un nuovo branch in un solo comando.
 
+• git switch -c <nome>
+  Crea e passa a un nuovo branch in un solo comando.
+
 • git merge <branch>
   Unisce il branch specificato nel branch attuale. Usalo per integrare il lavoro di un altro branch.
 
