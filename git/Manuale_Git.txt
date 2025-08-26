@@ -16,10 +16,10 @@ Git – Manuale Operativo di Ruben Poggiani
 • git commit -m "messaggio"
   Salva uno snapshot del progetto. Ogni commit rappresenta uno stato preciso dei file.
 
-• git push
+• git push origin "main"
   Invia i commit al repository remoto (GitHub, GitLab, ecc).
 
-• git pull
+• git pull origin "main"
   Scarica le modifiche dal repository remoto e aggiorna il tuo ramo locale.
 
 • git log --oneline
