@@ -51,6 +51,17 @@ Permette ai container di salvare dati persistenti. Possono essere di tipo hostPa
 🔹 PVC (PersistentVolumeClaim)
 Richiesta di uno storage persistente da utilizzare nei container.
 
+🔹 Deployment
+Un Deployment in Kubernetes serve a gestire e mantenere aggiornata una serie di repliche (pod) di un'applicazione stateless. Garantisce alta disponibilità, aggiornamenti continui (rolling update) e rollback automatici.
+ È il tipo di workload più usato per applicazioni web, API REST, frontend.
+
+🔹 StatefulSet
+Uno StatefulSet viene usato per applicazioni stateful, che hanno bisogno di identità fissa, ordine di avvio/arresto e storage persistente individuale. Ogni pod ha un nome stabile (es. mysql-0, mysql-1), e un PersistentVolumeClaim associato.
+ Usato per database (MySQL, PostgreSQL), sistemi di messaggistica (Kafka, RabbitMQ).
+
+🔹 DaemonSet
+Un DaemonSet assicura che ci sia un pod su ogni nodo del cluster (o su un subset specifico). È usato per tool di monitoraggio, logging, rete, o antivirus, che devono funzionare su tutti i nodi.
+ Esempi: Prometheus Node Exporter, Fluentd, Filebeat, Cilium, Falco.
 ──────────────────────────────
 ⚙️ ALTRI COMANDI UTILI
 ──────────────────────────────
