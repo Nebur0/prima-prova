@@ -60,7 +60,7 @@ kubectl config view                  # Mostra la configurazione di kubectl
 kubectl top pod                      # Mostra l’utilizzo delle risorse
 kubectl rollout restart deployment <nome>   # Riavvia il deployment
 kubectl scale deployment <nome> --replicas=3  # Scala il numero di pod
-
+kubectl delete all --all             # Elimina tutto, fare attenzione
 ──────────────────────────────
 ✅ PRATICA CONSIGLIATA
 ──────────────────────────────
