@@ -1,0 +1,69 @@
+
+📘 KUBERNETES – COMANDI ESSENZIALI E DEFINIZIONI
+
+──────────────────────────────
+🔧 COMANDI BASE DI KUBECTL
+──────────────────────────────
+kubectl version                       # Mostra la versione client/server
+kubectl cluster-info                  # Info sul cluster attivo
+kubectl get nodes                     # Elenco dei nodi
+kubectl get pods                      # Elenco dei pod
+kubectl get services                  # Elenco dei servizi
+kubectl get deployments               # Elenco dei deployment
+kubectl describe pod <nome>          # Dettagli di un pod
+kubectl logs <nome-pod>              # Visualizza i log di un pod
+kubectl exec -it <nome-pod> -- bash  # Accedi al pod in modalità interattiva
+kubectl apply -f <file.yaml>         # Applica una configurazione
+kubectl delete -f <file.yaml>        # Rimuove una configurazione
+kubectl delete pod <nome>            # Cancella un pod specifico
+kubectl expose pod <nome> --type=NodePort --port=80  # Espone un pod
+kubectl port-forward pod/<nome> 8080:80  # Port forwarding da locale al pod
+kubectl edit deployment <nome-deployment> # Modifica le risorse in live
+
+──────────────────────────────
+📦 OGGETTI KUBERNETES (DEFINIZIONI)
+──────────────────────────────
+
+🔹 POD
+Unità base di esecuzione in Kubernetes. Contiene uno o più container.
+
+🔹 DEPLOYMENT
+Gestisce la creazione e l'aggiornamento dei pod. Permette di scalare, aggiornare e ripristinare.
+
+🔹 SERVICE
+Espone uno o più pod, permettendo la comunicazione interna o esterna.
+- ClusterIP: accessibile solo internamente al cluster.
+- NodePort: espone il servizio su una porta del nodo host (es. 30000).
+- LoadBalancer: accessibile tramite IP pubblico (cloud only).
+
+🔹 CONFIGMAP
+Mappa di configurazione che contiene variabili d'ambiente o file config.
+
+🔹 SECRET
+Come ConfigMap, ma per informazioni sensibili (es. password, token).
+
+🔹 NAMESPACE
+Spazio logico per isolare risorse (es. ambienti dev/test/prod).
+
+🔹 VOLUME
+Permette ai container di salvare dati persistenti. Possono essere di tipo hostPath, emptyDir, pvc, ecc.
+
+🔹 PVC (PersistentVolumeClaim)
+Richiesta di uno storage persistente da utilizzare nei container.
+
+──────────────────────────────
+⚙️ ALTRI COMANDI UTILI
+──────────────────────────────
+kubectl get all                      # Mostra tutte le risorse
+kubectl get events                   # Mostra gli eventi del cluster
+kubectl config view                  # Mostra la configurazione di kubectl
+kubectl top pod                      # Mostra l’utilizzo delle risorse
+kubectl rollout restart deployment <nome>   # Riavvia il deployment
+kubectl scale deployment <nome> --replicas=3  # Scala il numero di pod
+
+──────────────────────────────
+✅ PRATICA CONSIGLIATA
+──────────────────────────────
+- Crea sempre un deployment e un service per rendere un'app accessibile.
+- Usa `kubectl apply -f` per aggiornamenti incrementali.
+- Controlla lo stato dei pod dopo ogni modifica.
