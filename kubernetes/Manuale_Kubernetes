@@ -6,6 +6,7 @@
 ──────────────────────────────
 kubectl version                       # Mostra la versione client/server
 kubectl cluster-info                  # Info sul cluster attivo
+kubectl run my-pod --image=gnix:alpine #Fai partire un pod chiamato "my-pod" con un'immagine alpine
 kubectl get nodes                     # Elenco dei nodi
 kubectl get pods                      # Elenco dei pod
 kubectl get services                  # Elenco dei servizi
