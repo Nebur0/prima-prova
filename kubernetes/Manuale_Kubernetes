@@ -12,6 +12,7 @@ kubectl get services                  # Elenco dei servizi
 kubectl get deployments               # Elenco dei deployment
 kubectl describe pod <nome>          # Dettagli di un pod
 kubectl logs <nome-pod>              # Visualizza i log di un pod
+kubectl logs <nome-pod> -f           # Serve per vedere i log  (-f) in tempo reale
 kubectl exec -it <nome-pod> -- bash  # Accedi al pod in modalità interattiva
 kubectl apply -f <file.yaml>         # Applica una configurazione
 kubectl delete -f <file.yaml>        # Rimuove una configurazione
