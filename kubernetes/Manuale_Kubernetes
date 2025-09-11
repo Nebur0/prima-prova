@@ -21,6 +21,7 @@ kubectl delete pod <nome>            # Cancella un pod specifico
 kubectl expose pod <nome> --type=NodePort --port=80  # Espone un pod
 kubectl port-forward pod/<nome> 8080:80  # Port forwarding da locale al pod
 kubectl edit deployment <nome-deployment> # Modifica le risorse in live
+kubectl create deployment my-first-deployment --image=nginx:alpine # Creo un deployment chiamato "my-first-deployment" con un'immagine alpine
 
 ──────────────────────────────
 📦 OGGETTI KUBERNETES (DEFINIZIONI)
