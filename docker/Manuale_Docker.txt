@@ -110,3 +110,53 @@ Network:
 docker network ls
 per vedere la list delle reti
 
+
+4. Docker Compose:
+
+es docker compose:
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
+🧩 Spiegazione
+
+services: elenco dei container (chiamati “servizi”).
+
+web: nome del servizio → creerà un container chiamato projectname-web.
+
+image: immagine da usare.
+
+ports: mappatura porte (host:container).
+
+environment: variabili d’ambiente per il container.
+
+volumes: persistenza dei dati.
+
+volumes: (in fondo) definizione dei volumi usati dai servizi.
+
+| Comando                               | Descrizione                                             |
+| ------------------------------------- | ------------------------------------------------------- |
+| `docker compose up`                   | Avvia i container (in foreground)                       |
+| `docker compose up -d`                | Avvia in background                                     |
+| `docker compose down`                 | Ferma e rimuove container, rete e volumi *anonimi*      |
+| `docker compose stop`                 | Ferma i container senza rimuoverli                      |
+| `docker compose start`                | Riavvia i container fermati                             |
+| `docker compose ps`                   | Mostra i container dello stack                          |
+| `docker compose logs`                 | Mostra i log di tutti i servizi                         |
+| `docker compose logs -f`              | Segue i log in tempo reale                              |
+| `docker compose exec <servizio> bash` | Apre una shell dentro un container in esecuzione        |
+| `docker compose build`                | Costruisce le immagini se usi Dockerfile personalizzati |
+
