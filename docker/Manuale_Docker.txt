@@ -91,6 +91,8 @@ Quando usarlo: quando vuoi personalizzare il comportamento di un container o agg
 
 📁 3. Volumi e Bind Mount
 Volumi Docker:
+docker volume ls
+per vedere la lista dei volumi
 
 docker run -v volume-html:/usr/share/nginx/html nginx
 Gestiti da Docker, salvati in /var/lib/docker/volumes
@@ -103,4 +105,8 @@ docker run -v /home/user/html:/usr/share/nginx/html nginx
 Collega una cartella locale alla directory del container.
 
 Ideale per lo sviluppo live (modifichi i file localmente e li vedi nel container subito).
+
+Network:
+docker network ls
+per vedere la list delle reti
 
